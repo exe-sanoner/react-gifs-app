@@ -1,0 +1,39 @@
+.Category-title {
+    color: #121212c6;
+    font-weight: bold;
+    font-size: 22px;
+}
+
+.Category-list {
+    list-style-position: inside;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+}
+
+.Category-list li::before {
+    /* content: '👉'; */
+    margin-right: .1em;
+}
+
+.Category-link {
+    color: peru;
+    font-size: 1em;
+    padding-left: 0.15em;
+    transition: color ease-in .1s;
+}
+
+.Category-link:hover {
+    color: #ee2c0a;
+} 
+
+@media screen and (min-width: 640px) {
+    .Category-list {
+        display: list-item;
+    }
+
+    .Category-list li::before {
+        content: '👉';
+        margin-right: .1em;
+    }
+}

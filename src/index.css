@@ -21,12 +21,16 @@ code {
 }
 
 button {
-  background: #09f;
+  background: rgb(0, 153, 255);
   border: 0;
   color: #fff;
   padding: 8px 16px;
   font-size: 16px;
   border-radius: 10px 0 0 10px;
+}
+
+button:hover {
+  cursor: pointer;
 }
 
 a {
