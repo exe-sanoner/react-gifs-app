@@ -2,6 +2,10 @@
   text-align: center;
 }
 
+h1 {
+  color: #000;
+}
+
 .App-logo {
   margin: 10px auto;
   padding: 20px 0;
@@ -32,7 +36,7 @@
 }
 
 .App-content h6 {
-  font-family: Marker Felt, fantasy; 
+  font-family: Marker Felt, fantasy;
   font-variant: small-caps;
   text-align: center;
   margin: 10px 0;
@@ -58,15 +62,55 @@
   width: 100%;
 }
 
-@media screen and (min-width: 640px){
-  .App-main{
+@media screen and (min-width: 640px) {
+  .App-main {
     flex-direction: initial;
   }
 
-  .App-category{
+  .App-category {
     padding: 0 2em;
     position: sticky;
     top: 0;
     width: 40%;
   }
+}
+
+/* PAGE 404 ERROR */
+
+.btn {
+  border: 1px solid transparent;
+  padding: 0.5rem 1rem;
+  background-color: var(--brand-color_3);
+  color: var(--theme-body-txt);
+  cursor: pointer;
+  font-size: 1rem;
+}
+
+.btn:hover {
+  background-color: var(--brand-color_6);
+}
+
+.page-error {
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 1rem;
+  text-align: center;
+}
+
+.page-error .code-error {
+  font-size: 5rem;
+  font-weight: bold;
+  font-style: italic;
+}
+
+.page-error .msg-error {
+  font-size: 1.5rem;
+  margin: 1rem 0;
+}
+
+.page-error .gif-error {
+  margin: 1rem auto;
+  width: 250px;
+  height: 250px;
 }
