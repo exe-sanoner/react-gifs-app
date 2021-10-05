@@ -8,15 +8,15 @@
   width: 144px;
 }
 
+.App-title {
+  color: var(--theme-body-txt);
+  margin-top: 0.6rem;
+}
+
 .App-logo img {
   object-fit: cover;
   width: 100%;
   cursor: pointer;
-}
-
-.App-title {
-  color: var(--theme-body-txt);
-  margin-top: 0.6rem;
 }
 
 .App-content {
