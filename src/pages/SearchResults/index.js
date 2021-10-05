@@ -55,9 +55,12 @@ export default function SearchResults({ params }) {
             <title>{title}</title>
             <meta name="description" content={title} />
           </Helmet>
-          <h3 className="App-title">{decodeURI(keyword)}</h3>
-          <ListOfGifs gifs={gifs} />
-          <div id="visor" ref={externalRef}></div>
+
+          <div className="App-wrapper">
+            <h3 className="App-title">{decodeURI(keyword)}</h3>
+            <ListOfGifs gifs={gifs} />
+            <div id="visor" ref={externalRef}></div>
+          </div>
         </>
       )}
       {/* <button onClick={handleNextPage}>Get next page</button> */}

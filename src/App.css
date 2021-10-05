@@ -2,10 +2,6 @@
   text-align: center;
 }
 
-h1 {
-  color: #000;
-}
-
 .App-logo {
   margin: 10px auto;
   padding: 20px 0;
@@ -19,14 +15,15 @@ h1 {
 }
 
 .App-title {
-  color: #121212c6;
-  font-weight: bold;
-  font-size: 22px;
+  color: var(--theme-body-txt);
+  margin-top: 0.6rem;
 }
 
 .App-content {
-  background-color: rgba(244, 237, 237, 0.708);
-  color: white;
+  /* background-color: rgba(244, 237, 237, 0.708); */
+  background-color: var(--theme-body-bg);
+  /* color: white; */
+  color: var(--theme-body-txt);
   display: flex;
   flex-direction: column;
   font-size: calc(10px + 2vmin);
@@ -55,6 +52,7 @@ h1 {
 
 .App-results {
   flex-shrink: 2;
+  width: 100%;
 }
 
 .App-category {
@@ -62,16 +60,16 @@ h1 {
   width: 100%;
 }
 
-@media screen and (min-width: 640px) {
+@media screen and (min-width: 55rem) {
   .App-main {
     flex-direction: initial;
   }
 
   .App-category {
-    padding: 0 2em;
     position: sticky;
-    top: 0;
+    top: var(--search-size-mx-h);
     width: 40%;
+    max-width: 300px;
   }
 }
 

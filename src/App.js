@@ -7,7 +7,7 @@ import Detail from "./pages/Detail";
 import Context from "./context/StaticContext";
 import { GifsContextProvider } from "./context/GifsContext";
 
-import { Link, Route } from "wouter";
+import { Link, Route, Switch } from "wouter";
 
 export default function App() {
   return (
@@ -23,10 +23,12 @@ export default function App() {
             </figure>
           </Link>
           <GifsContextProvider>
-            <Route component={Home} path="/" />
-            <Route component={SearchResults} path="/search/:keyword" />
-            <Route component={Detail} path="/gif/:id" />
-            {/* <Route component={ErrorPage} path="/:rest*" /> */}
+            <Switch>
+              <Route component={Home} path="/" />
+              <Route component={SearchResults} path="/search/:keyword" />
+              <Route component={Detail} path="/gif/:id" />
+              <Route component={ErrorPage} path="/:rest*" />
+            </Switch>
           </GifsContextProvider>
         </section>
       </div>
