@@ -1,5 +1,4 @@
-import React, { useCallback } from "react";
-import { Link, useLocation } from "wouter";
+import React from "react";
 import ListOfGifs from "components/ListOfGifs/ListOfGifs";
 import { useGifs } from "hooks/useGifs";
 import TrendingSearches from "components/TrendingSearches";
@@ -7,18 +6,7 @@ import SearchForm from "components/SearchForm";
 import { Helmet } from "react-helmet";
 
 export default function Home() {
-  const [path, pushLocation] = useLocation();
   const { loading, gifs } = useGifs(); // custom hook
-
-  const handleSubmit = useCallback(
-    ({ keyword }) => {
-      // evt.preventDefault();          // Lo hago en SearchForm ahora
-      // navegar a otra ruta
-      pushLocation(`/search/${keyword}`);
-      // console.log('🐤',keyword);
-    },
-    [pushLocation]
-  );
 
   return (
     <>
@@ -27,7 +15,7 @@ export default function Home() {
       </Helmet>
 
       <header className="o-header">
-        <SearchForm onSubmit={handleSubmit} />
+        <SearchForm />
       </header>
       <div className="App-wrapper">
         <div className="App-main">

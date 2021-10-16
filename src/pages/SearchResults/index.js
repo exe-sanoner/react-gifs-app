@@ -6,11 +6,12 @@ import userNearScreen from "hooks/useNearScreen";
 import debounce from "just-debounce-it";
 // import useSEO from "hooks/useSEO";
 import { Helmet } from "react-helmet";
+import SearchForm from "components/SearchForm";
 
 export default function SearchResults({ params }) {
   // console.log(params);
-  const { keyword } = params;
-  const { loading, gifs, setPage } = useGifs({ keyword }); // custom hook
+  const { keyword, rating = "g" } = params;
+  const { loading, gifs, setPage } = useGifs({ keyword, rating }); // custom hook
   const externalRef = useRef();
   const { isNearScreen } = userNearScreen({
     externalRef: loading ? null : externalRef,
@@ -34,7 +35,7 @@ export default function SearchResults({ params }) {
   // handleNextPage w/ DEBOUNCE + useCALLBACK
   const debounceHandleNextPage = useCallback(
     debounce(() => setPage((prevPage) => prevPage + 1), 200),
-    []
+    [setPage]
   );
 
   useEffect(
@@ -55,6 +56,9 @@ export default function SearchResults({ params }) {
             <title>{title}</title>
             <meta name="description" content={title} />
           </Helmet>
+          <header className="o-header">
+            <SearchForm initialKeyword={keyword} initialRating={rating} />
+          </header>
 
           <div className="App-wrapper">
             <h3 className="App-title">{decodeURI(keyword)}</h3>
